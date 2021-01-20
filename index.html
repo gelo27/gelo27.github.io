@@ -23,8 +23,13 @@
 	Привіт Зорянчиха!
 </div>
 <script type="text/javascript">
-	document.documentElement.webkitRequestFullscreen();
-	console.log(document.documentElement.requestFullscreen());
+	var elem = document.documentElement.webkitRequestFullscreen();
+	//console.log(document.documentElement.requestFullscreen());
+	
+	el.addEventListener('click', function(){
+		elem.requestFullScreen();
+		console.log('full screen');
+	});
 </script>
 </body>
 </html>
