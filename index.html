@@ -19,14 +19,14 @@
 	</style>
 </head>
 <body>
-<div class="say-hello" id="fullscrenn">
+<div class="say-hello" id="fullscreen">
 	Привіт Зорянчиха!
 </div>
 <script type="text/javascript">
 	var elem = document.documentElement;
 	//console.log(document.documentElement.requestFullscreen());
 	
-	document.getElementById("fullScreen").addEventListener('click', function(){
+	document.getElementById("fullscreen").addEventListener('click', function(){
 		elem.requestFullScreen();
 		console.log('full screen');
 	});
