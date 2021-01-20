@@ -60,17 +60,6 @@ canvas.addEventListener('touchstart', function(e){
 	draw = true;
 	console.log(draw);
 });
-
-canvas.addEventListener('touchmove', function(e){
-	//if (draw) {
-		ctx.beginPath();
-		ctx.fillStyle = "red";
-		ctx.arc(e.offsetX, e.offsetY, 40, 0, 2 * Math.PI);
-		ctx.fill();
-		//console.log(e.offsetX);
-		//console.log(draw);
-	//}
-});
 	
 canvas.addEventListener("touchmove", function (e) {
   var touch = e.touches[0];
