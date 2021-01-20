@@ -56,12 +56,12 @@ function GoInFullscreen(element) {
 
 var draw = false;
 
-canvas.addEventListener('mousedown', function(e){
+canvas.addEventListener('touchstart', function(e){
 	draw = true;
 	console.log(draw);
 });
 
-canvas.addEventListener('mousemove', function(e){
+canvas.addEventListener('touchmove', function(e){
 	//if (draw) {
 		ctx.beginPath();
 		ctx.fillStyle = "red";
@@ -72,7 +72,7 @@ canvas.addEventListener('mousemove', function(e){
 	//}
 });
 
-canvas.addEventListener('mouseup', function(e){
+canvas.addEventListener('touchend', function(e){
 	draw = false;
 	console.log(draw);
 });
