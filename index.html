@@ -23,13 +23,27 @@
 	Привіт Зорянчиха!
 </div>
 <script type="text/javascript">
-	var elem = document.documentElement;
-	//console.log(document.documentElement.requestFullscreen());
+	var elem = document.getElementById("fullscreen");
+	var doc = document.documentElement;
+	//console.log(elem);
 	
-	document.getElementById("fullscreen").addEventListener('click', function(){
-		elem.requestFullScreen();
-		console.log('full screen');
-	});
+	
+
+	/* Get into full screen */
+function GoInFullscreen(element) {
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
+
+
+document.getElementById("fullscreen").addEventListener('click', function(){
+		GoInFullscreen(doc);
 </script>
 </body>
 </html>
