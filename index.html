@@ -24,14 +24,20 @@
 	Привіт Зорянчиха!
 </div>
 <script type="text/javascript">
-	var elem = document.getElementById("fullscreen");
-	var doc = document.documentElement;
+var canvas = document.querySelector("#canvas"),
+	ctx = canvas.getContext("2d"),
+	doc = document.documentElement;
+
+canvas.width = doc.clientWidth;
+canvas.height = doc.clientHeight;
+//console.log(document.documentElement.clientWidth );
+//	var elem = document.getElementById("fullscreen");
+//	var doc = document.documentElement;
 	//console.log(elem);
-	//screen.lockOrientation("portrait-primary");
-	//screen.orientation.lock();
+	
 	
 
-	/* Get into full screen */
+	/* Get into full screen 
 function GoInFullscreen(element) {
 	if(element.requestFullscreen)
 		element.requestFullscreen();
@@ -42,11 +48,31 @@ function GoInFullscreen(element) {
 	else if(element.msRequestFullscreen)
 		element.msRequestFullscreen();
 }
+*/
 
+var draw = false;
 
-doc.addEventListener('click', function(){
-		GoInFullscreen(doc);
+canvas.addEventListener('mousedown', function(e){
+	draw = true;
+	console.log(draw);
 });
+
+canvas.addEventListener('mousemove', function(e){
+	if (draw) {
+		ctx.beginPath();
+		ctx.fillStyle = "red";
+		ctx.arc(e.offsetX, e.offsetY, 40, 0, 2 * Math.PI);
+		ctx.fill();
+		//console.log(e.offsetX);
+		//console.log(draw);
+	}
+});
+
+canvas.addEventListener('mouseup', function(e){
+	draw = false;
+	console.log(draw);
+});
+
 </script>
 </body>
 </html>
