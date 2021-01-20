@@ -17,12 +17,16 @@
 			color: #000;
 			user-select: none;
 		}
+		canvas{
+			background-color: #dcdcdc;
+			left: 0;
+			top: 0;
+			position: fixed;
+		}
 	</style>
 </head>
 <body>
-<div class="say-hello" id="fullscreen">
-	Привіт Зорянчиха!
-</div>
+<canvas id="canvas"></canvas>
 <script type="text/javascript">
 var canvas = document.querySelector("#canvas"),
 	ctx = canvas.getContext("2d"),
