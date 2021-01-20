@@ -62,10 +62,10 @@ canvas.addEventListener('touchstart', function(e){
 	    clientX: touch.clientX,
 	    clientY: touch.clientY
 	  });
-		ctx.beginPath();
-		ctx.fillStyle = "red";
-		ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
-		ctx.fill();
+		//ctx.beginPath();
+		//ctx.fillStyle = "red";
+		//ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
+		//ctx.fill();
 
 	  canvas.dispatchEvent(mouseEvent);
 });
@@ -76,17 +76,26 @@ canvas.addEventListener("touchmove", function (e) {
     clientX: touch.clientX,
     clientY: touch.clientY
   });
-	ctx.beginPath();
-	ctx.fillStyle = "red";
-	ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
-	ctx.fill();
+	//ctx.beginPath();
+	//ctx.fillStyle = "red";
+	//ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
+	//ctx.fill();
 	
   canvas.dispatchEvent(mouseEvent);
 }, false);
 
 canvas.addEventListener('touchend', function(e){
-	draw = false;
-	console.log(draw);
+	var touch = e.touches[0];
+	  var mouseEvent = new MouseEvent("mouseup", {
+	    clientX: touch.clientX,
+	    clientY: touch.clientY
+	  });
+		ctx.beginPath();
+		ctx.fillStyle = "red";
+		ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
+		ctx.fill();
+
+	  canvas.dispatchEvent(mouseEvent);
 });
 
 </script>
