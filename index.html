@@ -71,6 +71,20 @@ canvas.addEventListener('touchmove', function(e){
 		//console.log(draw);
 	//}
 });
+	
+canvas.addEventListener("touchmove", function (e) {
+  var touch = e.touches[0];
+  var mouseEvent = new MouseEvent("mousemove", {
+    clientX: touch.clientX,
+    clientY: touch.clientY
+  });
+	ctx.beginPath();
+	ctx.fillStyle = "red";
+	ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 40, 0, 2 * Math.PI);
+	ctx.fill();
+	
+  canvas.dispatchEvent(mouseEvent);
+}, false);
 
 canvas.addEventListener('touchend', function(e){
 	draw = false;
