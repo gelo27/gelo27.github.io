@@ -57,8 +57,17 @@ function GoInFullscreen(element) {
 var draw = false;
 
 canvas.addEventListener('touchstart', function(e){
-	draw = true;
-	console.log(draw);
+	  var touch = e.touches[0];
+	  var mouseEvent = new MouseEvent("mousedown", {
+	    clientX: touch.clientX,
+	    clientY: touch.clientY
+	  });
+		ctx.beginPath();
+		ctx.fillStyle = "red";
+		ctx.arc(mouseEvent.clientX, mouseEvent.clientY, 25, 0, 2 * Math.PI);
+		ctx.fill();
+
+	  canvas.dispatchEvent(mouseEvent);
 });
 	
 canvas.addEventListener("touchmove", function (e) {
