@@ -34,8 +34,8 @@ const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0,1,0) ,
 //box.position = new BABYLON.Vector3(0, 0, 0);
 
 // Append glTF model to scene.
-BABYLON.SceneLoader.Append("models/", "isometric-tree.obj", scene);
-
+const mesh = BABYLON.SceneLoader.Append("models/", "isometric-tree.obj", scene);
+console.log(mesh);
 /*const frameRate = 1;
 const ySlide = new BABYLON.Animation("ySlide", "rotation.y", frameRate, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
 
